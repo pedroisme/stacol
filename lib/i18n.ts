@@ -7,7 +7,7 @@ export function isLocale(value: string): value is Locale {
 }
 
 export type ProductItem = {
-  id: "powder-free" | "low-voc" | "uv" | "spot-color";
+  id: "low-voc" | "uv" | "spot-color";
   name: string;
   blurb: string;
 };
@@ -67,7 +67,7 @@ const zh: Dictionary = {
   meta: {
     title: "Stacol 安光油墨 | 环保印刷油墨",
     description:
-      "Stacol 安光油墨，专注环保印刷油墨的研发与生产，提供免喷粉、低 VOC、UV 与专色定制解决方案。",
+      "Stacol 安光油墨，专注环保印刷油墨的研发与生产，提供低 VOC、UV 与专色定制解决方案。",
   },
   nav: {
     products: "产品",
@@ -81,7 +81,7 @@ const zh: Dictionary = {
     brandSub: "安光油墨",
     headline: "让印刷更干净，也更可靠。",
     subhead:
-      "从免喷粉、低 VOC 到 UV 与专色定制，为包装与出版印厂提供稳定可复的环保油墨。",
+      "从低 VOC、UV 到专色定制，为包装与出版印厂提供稳定可复的环保油墨。",
     ctaPrimary: "联系我们",
     ctaSecondary: "查看产品",
   },
@@ -89,11 +89,6 @@ const zh: Dictionary = {
     title: "产品系列",
     subhead: "面向高速胶印与包装场景的环保油墨",
     items: [
-      {
-        id: "powder-free",
-        name: "免喷粉油墨",
-        blurb: "新一代免喷粉体系，减少粉尘与后道负担，让高速印刷更干净。",
-      },
       {
         id: "low-voc",
         name: "低 VOC 油墨",
@@ -141,7 +136,7 @@ const en: Dictionary = {
   meta: {
     title: "Stacol | Environmental Printing Inks",
     description:
-      "Stacol (Anguang Ink) develops environmental printing inks — powder-free, low-VOC, UV, and custom spot colors for packaging and publishing presses.",
+      "Stacol (Anguang Ink) develops environmental printing inks — low-VOC, UV, and custom spot colors for packaging and publishing presses.",
   },
   nav: {
     products: "Products",
@@ -155,7 +150,7 @@ const en: Dictionary = {
     brandSub: "Anguang Ink",
     headline: "Cleaner presses. Reliable color.",
     subhead:
-      "Powder-free, low-VOC, UV, and custom spot-color inks for packaging and publishing printers who need stable quality and cleaner production.",
+      "Low-VOC, UV, and custom spot-color inks for packaging and publishing printers who need stable quality and cleaner production.",
     ctaPrimary: "Contact us",
     ctaSecondary: "View products",
   },
@@ -163,11 +158,6 @@ const en: Dictionary = {
     title: "Product lines",
     subhead: "Environmental inks built for high-speed offset and packaging work",
     items: [
-      {
-        id: "powder-free",
-        name: "Powder-free inks",
-        blurb: "Next-generation powder-free systems that cut dust and finishing load on high-speed runs.",
-      },
       {
         id: "low-voc",
         name: "Low-VOC inks",

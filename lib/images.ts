@@ -3,7 +3,6 @@ export const images = {
   og: "/images/og.png",
   hero: "/images/hero/press.jpg",
   products: {
-    "powder-free": "/images/products/powder-free.jpg",
     "low-voc": "/images/products/low-voc.jpg",
     uv: "/images/products/uv.jpg",
     "spot-color": "/images/products/spot-color.jpg",
