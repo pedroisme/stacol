@@ -6,6 +6,12 @@ export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
 }
 
+export type ProductItem = {
+  id: "powder-free" | "low-voc" | "uv" | "spot-color";
+  name: string;
+  blurb: string;
+};
+
 export type Dictionary = {
   meta: {
     title: string;
@@ -28,17 +34,24 @@ export type Dictionary = {
   products: {
     title: string;
     subhead: string;
-    items: { name: string; blurb: string }[];
+    items: ProductItem[];
   };
   about: {
     title: string;
     body: string;
+  };
+  certs: {
+    title: string;
+    iso: string;
+    env: string;
+    award: string;
   };
   contact: {
     title: string;
     subhead: string;
     phoneLabel: string;
     emailLabel: string;
+    wechatLabel: string;
   };
 };
 
@@ -65,23 +78,30 @@ const zh: Dictionary = {
   },
   products: {
     title: "核心产品",
-    subhead: "面向胶印与包装场景的环保油墨系列（文案与图片将在下一步完善）",
+    subhead: "面向胶印与包装场景的环保油墨系列",
     items: [
-      { name: "免喷粉油墨", blurb: "高速印刷更干净，减少粉尘与后道负担。" },
-      { name: "低 VOC 油墨", blurb: "降低挥发性有机物，契合绿色印刷要求。" },
-      { name: "UV 油墨", blurb: "快速固化，适合包装与特种印刷。" },
-      { name: "专色定制", blurb: "按品牌色精确调配，稳定可复现。" },
+      { id: "powder-free", name: "免喷粉油墨", blurb: "高速印刷更干净，减少粉尘与后道负担。" },
+      { id: "low-voc", name: "低 VOC 油墨", blurb: "降低挥发性有机物，契合绿色印刷要求。" },
+      { id: "uv", name: "UV / LED-UV 油墨", blurb: "快速固化，适合包装与特种印刷。" },
+      { id: "spot-color", name: "专色定制", blurb: "按品牌色精确调配，稳定可复现。" },
     ],
   },
   about: {
     title: "关于 Stacol 安光油墨",
-    body: "我们专注环保印刷油墨的研发、生产与服务。网站内容与品牌视觉将在后续步骤用公司素材完善。",
+    body: "天津安光油墨专注环保印刷油墨的研发、生产与服务，为包装与出版印厂提供稳定可靠的油墨方案。",
+  },
+  certs: {
+    title: "资质与认证",
+    iso: "ISO 9001",
+    env: "中国环境标志（十环）",
+    award: "免喷粉优秀科技成果奖",
   },
   contact: {
     title: "联系我们",
     subhead: "欢迎咨询产品与合作事宜",
     phoneLabel: "电话",
     emailLabel: "邮箱",
+    wechatLabel: "微信公众号",
   },
 };
 
@@ -108,36 +128,30 @@ const en: Dictionary = {
   },
   products: {
     title: "Products",
-    subhead:
-      "Core environmental ink lines for offset and packaging (copy and imagery next)",
+    subhead: "Environmental ink lines for offset and packaging presses",
     items: [
-      {
-        name: "Powder-free inks",
-        blurb: "Cleaner high-speed runs with less dust and finishing load.",
-      },
-      {
-        name: "Low-VOC inks",
-        blurb: "Lower volatile organic compounds for greener print rooms.",
-      },
-      {
-        name: "UV inks",
-        blurb: "Fast curing for packaging and specialty work.",
-      },
-      {
-        name: "Spot-color matching",
-        blurb: "Precise brand-color formulation you can repeat.",
-      },
+      { id: "powder-free", name: "Powder-free inks", blurb: "Cleaner high-speed runs with less dust and finishing load." },
+      { id: "low-voc", name: "Low-VOC inks", blurb: "Lower volatile organic compounds for greener print rooms." },
+      { id: "uv", name: "UV / LED-UV inks", blurb: "Fast curing for packaging and specialty work." },
+      { id: "spot-color", name: "Spot-color matching", blurb: "Precise brand-color formulation you can repeat." },
     ],
   },
   about: {
     title: "About Stacol",
-    body: "We develop, manufacture, and support environmental printing inks. Brand story and visuals will be completed with company assets in later steps.",
+    body: "Tianjin Anguang Ink develops, manufactures, and supports environmental printing inks for packaging and publishing printers worldwide.",
+  },
+  certs: {
+    title: "Credentials",
+    iso: "ISO 9001",
+    env: "China Environmental Labeling",
+    award: "Powder-free ink technology award",
   },
   contact: {
     title: "Contact",
     subhead: "Reach out for products and partnerships",
     phoneLabel: "Phone",
     emailLabel: "Email",
+    wechatLabel: "WeChat",
   },
 };
 
