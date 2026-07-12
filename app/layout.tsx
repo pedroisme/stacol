@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Stacol",
   },
   description: "Stacol / Anguang Ink — environmental printing inks",
-  metadataBase: new URL("https://stacol1.vercel.app"),
+  metadataBase: new URL("https://inkstacol.com"),
 };
 
 export default function RootLayout({
