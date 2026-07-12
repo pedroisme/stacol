@@ -1,0 +1,12 @@
+# Raw source assets — web images already live in public/images/
+31、安光画册资料 终稿/
+产品图片/
+node_modules
+.next
+.git
+*.psd
+*.ai
+*.tif
+*.tiff
+*.rar
+.DS_Store
