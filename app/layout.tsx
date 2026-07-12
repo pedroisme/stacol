@@ -21,7 +21,10 @@ const displayEn = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Stacol 安光油墨",
+  title: {
+    default: "Stacol 安光油墨",
+    template: "%s | Stacol",
+  },
   description: "Stacol / Anguang Ink — environmental printing inks",
 };
 

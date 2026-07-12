@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { BrandMark } from "@/components/BrandMark";
+import { HtmlLang } from "@/components/HtmlLang";
 import { Reveal } from "@/components/Reveal";
 import { SiteHeader } from "@/components/SiteHeader";
 import {
@@ -28,6 +29,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: [{ url: images.og }],
+      locale: raw === "zh" ? "zh_CN" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: [images.og],
+    },
   };
 }
 
@@ -39,6 +53,7 @@ export default async function LocaleHome({ params }: Props) {
 
   return (
     <div className="site-shell">
+      <HtmlLang locale={locale} />
       <SiteHeader locale={locale} dict={dict} />
 
       <main>

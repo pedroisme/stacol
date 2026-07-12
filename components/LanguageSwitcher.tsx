@@ -12,7 +12,7 @@ export function LanguageSwitcher({ locale, label }: Props) {
   return (
     <Link
       href={`/${nextLocale}`}
-      className="text-sm tracking-wide text-[var(--ink-muted)] transition-colors hover:text-[var(--ink)]"
+      className="lang-switch"
       hrefLang={nextLocale}
     >
       {label}
