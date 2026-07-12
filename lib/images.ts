@@ -1,4 +1,5 @@
 export const images = {
+  logo: "/images/logo.png",
   hero: "/images/hero/press.jpg",
   products: {
     "powder-free": "/images/products/powder-free.jpg",

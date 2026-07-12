@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
-import { BrandMark } from "@/components/BrandMark";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { images } from "@/lib/images";
 
 type Props = {
   locale: Locale;
@@ -11,12 +12,15 @@ type Props = {
 export function SiteHeader({ locale, dict }: Props) {
   return (
     <header className="site-header site-header--overlay">
-      <Link href={`/${locale}`} className="brand">
-        <BrandMark />
-        <span className="brand-text">
-          <span className="brand-name">{dict.hero.brand}</span>
-          <span className="brand-sub">{dict.hero.brandSub}</span>
-        </span>
+      <Link href={`/${locale}`} className="brand" aria-label={`${dict.hero.brand} ${dict.hero.brandSub}`}>
+        <Image
+          src={images.logo}
+          alt={`${dict.hero.brand} ${dict.hero.brandSub}`}
+          width={120}
+          height={116}
+          className="brand-logo"
+          priority
+        />
       </Link>
       <nav className="nav-links" aria-label="Primary">
         <a href="#products">{dict.nav.products}</a>
