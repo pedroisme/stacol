@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -15,8 +13,10 @@
 
 # next.js
 /.next/
-/.vinext/
 /out/
+
+# production
+/build
 
 # misc
 .DS_Store
@@ -28,15 +28,22 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files
 .env*
 
 # vercel
 .vercel
 
 # typescript
+*.tsbuildinfo
 next-env.d.ts
-/dist/
-/.wrangler/
-/outputs/
-/work/
+
+# Raw company source assets (too large / not web-ready).
+# Selected web images will live under public/images/ in a later step.
+/31、安光画册资料 终稿/
+/产品图片/
+*.psd
+*.ai
+*.tif
+*.tiff
+*.rar

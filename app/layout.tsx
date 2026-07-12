@@ -1,58 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { headers } from "next/headers";
+import { Noto_Sans_SC, Noto_Serif_SC, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const body = Noto_Sans_SC({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const displayZh = Noto_Serif_SC({
+  variable: "--font-display-zh",
   subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
-const siteTitle = "Stacol | 公司品牌与数字化增长伙伴";
-const siteDescription =
-  "Stacol 帮助成长型公司梳理品牌定位、设计数字体验，并建立清晰的客户转化路径。";
+const displayEn = Source_Serif_4({
+  variable: "--font-display-en",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
-export async function generateMetadata(): Promise<Metadata> {
-  const headerStore = await headers();
-  const host = headerStore.get("x-forwarded-host") ?? headerStore.get("host");
-  const protocol = headerStore.get("x-forwarded-proto") ?? "https";
-  const metadataBase = new URL(`${protocol}://${host ?? "localhost:3000"}`);
-  const imageUrl = new URL("/og.png", metadataBase).toString();
-
-  return {
-    metadataBase,
-    title: siteTitle,
-    description: siteDescription,
-    icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
-    },
-    openGraph: {
-      title: siteTitle,
-      description: siteDescription,
-      type: "website",
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: "Stacol 品牌与数字化增长伙伴",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: siteTitle,
-      description: siteDescription,
-      images: [imageUrl],
-    },
-  };
-}
+export const metadata: Metadata = {
+  title: "Stacol 安光油墨",
+  description: "Stacol / Anguang Ink — environmental printing inks",
+};
 
 export default function RootLayout({
   children,
@@ -60,9 +31,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html
+      lang="zh"
+      className={`${body.variable} ${displayZh.variable} ${displayEn.variable} h-full antialiased`}
+    >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="min-h-full flex flex-col"
+        style={
+          {
+            "--font-display":
+              "var(--font-display-en), var(--font-display-zh), Georgia, serif",
+          } as React.CSSProperties
+        }
       >
         {children}
       </body>
